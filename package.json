@@ -1,0 +1,31 @@
+{
+  "name": "material-icons-subset",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "material",
+    "icons",
+    "icon",
+    "subset",
+    "font"
+  ],
+  "author": "Dalci de Jesus Bagolin <dalci.b+npm@gmail.com> (https://github.org/dalcib)",
+  "license": "MIT",
+  "dependencies": {
+    "@mdi/svg": "5.3.45",
+    "webfont": "^9.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalcib/material-icons-subset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dalcib/material-icons-subset/issues"
+  },
+  "homepage": "https://github.com/dalcib/material-icons-subset#readme",
+  "description": ""
+}

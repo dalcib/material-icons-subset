@@ -1,0 +1,26 @@
+{
+  "fontFile": "MaterialIcons",
+  "formats": ["ttf"],
+  "fontName": "Material Design Icons",
+  "fileName": "materialdesigniconsxx",
+  "dest": "./fonts",
+  "icons": [
+    "camera",
+    "menu",
+    "account-outline",
+    "tune",
+    "bookmark-outline",
+    "pause",
+    "arrow-left",
+    "archive",
+    "email",
+    "label",
+    "delete",
+    "reply",
+    "magnify",
+    "dots-vertical",
+    "folder",
+    "eye",
+    "image-album"
+  ]
+}
