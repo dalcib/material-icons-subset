@@ -5,11 +5,10 @@ const { major, minor, patch } = require('./node_modules/@mdi/svg/font-build.json
 const userConfig = require(resolve(process.argv[2] || join(process.cwd(), 'fontconfig.json')))
 
 const config = {
-  fontFile: 'MaterialIcons',
   formats: ['ttf'],
   fontName: 'Material Design Icons',
-  fileName: 'materialdesignicons',
-  dest: './',
+  fontFile: 'materialdesignicons',
+  dest: '.',
   ...userConfig,
 }
 
@@ -28,8 +27,8 @@ webfont({
   version: `${major}.${minor}.${patch}`,
 })
   .then((result) => {
-    writeFileSync(join(config.dest, `${config.fileName}-webfont.ttf`), result.ttf)
-    writeFileSync(join(config.dest, `${config.fileName}-webfont.json`), JSON.stringify(glyphMap))
+    writeFileSync(join(config.dest, `${config.fontFile}-webfont.ttf`), result.ttf)
+    writeFileSync(join(config.dest, `${config.fontFile}-webfont.json`), JSON.stringify(glyphMap))
     console.log(`Generated ttf`)
     return result
   })

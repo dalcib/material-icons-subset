@@ -1,4 +1,8 @@
 {
+  "formats": ["ttf"],
+  "fontName": "Material Design Icons",
+  "fontFile": "materialdesignicons",
+  "dest": ".",
   "icons": [
     "camera",
     "menu",
