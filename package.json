@@ -2,6 +2,9 @@
   "name": "material-icons-subset",
   "version": "0.1.0",
   "main": "index.js",
+  "bin": {
+    "material-icons-subset": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +13,10 @@
     "icons",
     "icon",
     "subset",
-    "font"
+    "font",
+    "react-native-vector-icons",
+    "@expo/vector-icons",
+    "vector-icons"
   ],
   "author": "Dalci de Jesus Bagolin <dalci.b+npm@gmail.com> (https://github.org/dalcib)",
   "license": "MIT",
@@ -18,7 +24,6 @@
     "@mdi/svg": "5.3.45",
     "webfont": "^9.0.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dalcib/material-icons-subset.git"
