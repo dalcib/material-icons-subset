@@ -30,7 +30,7 @@ if (!userConfig.icons) {
 }
 
 const config = {
-  formats: ['ttf'],
+  format: 'ttf',
   fontName: 'Material Design Icons',
   fontFile: 'materialicons-subset',
   dest: '.',
@@ -46,18 +46,21 @@ const paths = [...new Set(config.icons)].sort().map((icon, i) => {
 webfont({
   files: paths,
   fontName: config.fontName,
-  format: config.formats,
+  format: [config.format],
   fontHeight: 512,
   descent: 64,
   version: `${major}.${minor}.${patch}`,
 })
   .then((result) => {
-    writeFileSync(join(process.cwd(), config.dest, `${config.fontFile}-subset.ttf`), result.ttf)
+    writeFileSync(
+      join(process.cwd(), config.dest, `${config.fontFile}-subset.${config.format}`),
+      result[config.format]
+    )
     writeFileSync(
       join(process.cwd(), config.dest, `${config.fontFile}-subset.json`),
       JSON.stringify(glyphMap)
     )
-    console.log(`Generated ${config.formats}`)
+    console.log(`Generated ${config.format}`)
     return result
   })
   .catch((error) => {
