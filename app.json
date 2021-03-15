@@ -1,0 +1,7 @@
+{
+  "extra": {
+    "material-icons-subset": {
+      "icons": ["camera", "menu", "account-outline", "tune", "bookmark-outline", "pause"]
+    }
+  }
+}

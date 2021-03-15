@@ -14,6 +14,21 @@ if (process.argv[2].endsWith('.json')) {
   userConfig.icons = process.argv.slice(2)
 }
 
+const MIS = 'material-icons-subset'
+if (!userConfig.icons) {
+  if (userConfig[MIS] && userConfig[MIS].icons) userConfig = userConfig[MIS]
+  else if (userConfig.extra) {
+    if (userConfig.extra.icons) userConfig = userConfig.extra
+    if (userConfig.extra[MIS] && userConfig.extra[MIS].icons) userConfig = userConfig.extra[MIS]
+  }
+  if (userConfig.icons === []) {
+    console.error(
+      'Error: The config.json must have a "icon" property with an array of the name of icons'
+    )
+    process.exit(1)
+  }
+}
+
 const config = {
   formats: ['ttf'],
   fontName: 'Material Design Icons',

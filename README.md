@@ -23,7 +23,7 @@ Or, you can pass the path for a config.json file:
 material-icons-subset font-config.json 
 ```
 
-The config.json file mast have an array called `icons` with the name of the icons to be include in the font:
+The config.json file must have an array called `icons` with the name of the icons to be include in the font:
 
 ```JSON
 {
@@ -42,9 +42,9 @@ The config.json file mast have an array called `icons` with the name of the icon
 
 ### Configuration
 
-Optionally, you can use the config.json to configure:
+You can also use the config.json to configure:
 
-```JSON
+```
 {
   "formats": ["ttf"], //ttf, woff, woff2
   "fontName": "Material Design Icons",
@@ -54,6 +54,20 @@ Optionally, you can use the config.json to configure:
 ```
 These are the default values.
 
+The following config.json are accepted.
+```
+{"icons": [...], ...}}
+```
+```
+{"material-icons-subset": {"icons": [...], ...}}
+```
+```
+{"extra": {"icons": [...], ...}}
+```
+```
+{"extra": {"material-icons-subset": {"icons": [...], ...}}}
+```
+In this way, package.json or app.json can be used to configuration.
 
 ### Result
 
@@ -61,5 +75,5 @@ By default, the library will create two files:
  `materialdesignicons-subset.ttf` and 
  `materialdesignicons-subset.json` with the GlyphMap.
 
-The GlyphMap file can be used with libraries like [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons/) with the alias configuration in the bundler for the font and for the GlypgMap. In this library this font is called MaterialComunityIcons.
+The GlyphMap file can be used with libraries like [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons/) with the alias configuration in the bundler for the font and for the GlyphMap. In this library this font is called MaterialComunityIcons.
 
