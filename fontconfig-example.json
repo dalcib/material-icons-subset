@@ -1,5 +1,5 @@
 {
-  "format": "svg",
+  "formats": ["svg", "ttf", "woff"],
   "fontName": "Material Design Icons",
   "fontFile": "materialicons-subsetx",
   "dest": ".",

@@ -47,7 +47,7 @@ You can also use the config.json to configure:
 
 ```
 {
-  "format": "ttf", //svg, ttf, woff, woff2
+  "formats": ["ttf"], //svg, ttf, woff, woff2
   "fontName": "Material Design Icons",
   "fontFile": "materialdesignicons",
   "dest": ".",
