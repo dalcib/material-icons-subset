@@ -1,6 +1,6 @@
 {
   "name": "material-icons-subset",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "index.js",
   "bin": {
     "material-icons-subset": "index.js"
@@ -34,13 +34,6 @@
   "homepage": "https://github.com/dalcib/material-icons-subset#readme",
   "description": "",
   "material-icons-subset": {
-    "icons": [
-      "camera",
-      "menu",
-      "account-outline",
-      "tune",
-      "bookmark-outline",
-      "pause"
-    ]
+    "icons": ["camera", "menu", "account-outline", "tune", "bookmark-outline", "pause"]
   }
 }

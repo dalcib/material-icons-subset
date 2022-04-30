@@ -44,10 +44,10 @@ const glyphMap = {}
 const paths = [...new Set(config.icons)].sort().map((icon, i) => {
   glyphMap[icon] = 59905 + i
   const iconName = `${icon}.svg`
-  if(!dirFiles.has(iconName)) {
+  if (!dirFiles.has(iconName)) {
     console.warn('Skipping', iconName)
   }
-  return join(glyphDir, iconName);
+  return join(glyphDir, iconName)
 })
 
 webfont({
