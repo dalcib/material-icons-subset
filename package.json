@@ -21,8 +21,8 @@
   "author": "Dalci de Jesus Bagolin <dalci.b+npm@gmail.com> (https://github.org/dalcib)",
   "license": "MIT",
   "dependencies": {
-    "@mdi/svg": "5.3.45",
-    "webfont": "^9.0.0"
+    "@mdi/svg": "6.6.96",
+    "webfont": "^11.3.0"
   },
   "repository": {
     "type": "git",
