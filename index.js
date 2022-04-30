@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const webfont = require('webfont').default
-const { writeFileSync } = require('fs')
-const { join, resolve } = require('path')
-const { major, minor, patch } = require('./node_modules/@mdi/svg/font-build.json').version
+const { writeFileSync, readdirSync } = require('fs')
+const { dirname, join, resolve } = require('path')
+const { major, minor, patch } = require('@mdi/svg/font-build.json').version
 if (process.argv.length === 2) {
   console.error('Error: Expected a path for a fontconfig.json file or a list of the name of icons')
   process.exit(1)
@@ -37,10 +37,17 @@ const config = {
   ...userConfig,
 }
 
+const glyphDir = join(dirname(require.resolve('@mdi/svg/font-build.json')), 'svg')
+const dirFiles = new Set(readdirSync(glyphDir))
+
 const glyphMap = {}
 const paths = [...new Set(config.icons)].sort().map((icon, i) => {
   glyphMap[icon] = 59905 + i
-  return `${__dirname}/node_modules/@mdi/svg/svg/${icon}.svg`
+  const iconName = `${icon}.svg`
+  if(!dirFiles.has(iconName)) {
+    console.warn('Skipping', iconName)
+  }
+  return join(glyphDir, iconName);
 })
 
 webfont({
