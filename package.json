@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "@mdi/svg": "6.6.96",
-    "webfont": "^11.3.0"
+    "webfont": "^11.2.26"
   },
   "repository": {
     "type": "git",
