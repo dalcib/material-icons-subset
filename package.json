@@ -1,6 +1,6 @@
 {
   "name": "material-icons-subset",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "index.js",
   "bin": {
     "material-icons-subset": "index.js"

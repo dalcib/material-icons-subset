@@ -3,6 +3,7 @@ const webfont = require('webfont').default
 const { writeFileSync, readdirSync } = require('fs')
 const { dirname, join, resolve } = require('path')
 const { major, minor, patch } = require('@mdi/svg/font-build.json').version
+
 if (process.argv.length === 2) {
   console.error('Error: Expected a path for a fontconfig.json file or a list of the name of icons')
   process.exit(1)
@@ -21,7 +22,7 @@ if (!userConfig.icons) {
     if (userConfig.extra.icons) userConfig = userConfig.extra
     if (userConfig.extra[MIS] && userConfig.extra[MIS].icons) userConfig = userConfig.extra[MIS]
   }
-  if (userConfig.icons === []) {
+  if (userConfig.icons.length === 0) {
     console.error(
       'Error: The config.json must have a "icon" property with an array of the name of icons'
     )
@@ -37,7 +38,7 @@ const config = {
   ...userConfig,
 }
 
-const glyphDir = join(dirname(require.resolve('@mdi/svg')), 'svg')
+const glyphDir = join(dirname(require.resolve('@mdi/svg/package.json')), 'svg')
 const dirFiles = new Set(readdirSync(glyphDir))
 
 const glyphMap = {}
@@ -47,7 +48,7 @@ const paths = [...new Set(config.icons)].sort().map((icon, i) => {
   if (!dirFiles.has(iconName)) {
     console.warn('Skipping', iconName)
   }
-  return join(glyphDir, iconName)
+  return join(glyphDir, iconName).replace(/\\/g, '/')
 })
 
 webfont({
