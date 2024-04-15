@@ -37,7 +37,7 @@ const config = {
   ...userConfig,
 }
 
-const glyphDir = join(dirname(require.resolve('@mdi/svg/font-build.json')), 'svg')
+const glyphDir = join(dirname(require.resolve('@mdi/svg')), 'svg')
 const dirFiles = new Set(readdirSync(glyphDir))
 
 const glyphMap = {}
